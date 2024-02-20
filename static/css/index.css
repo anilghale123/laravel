@@ -15,8 +15,13 @@ body {
   color: var(--primary-color);
 }
 
+h1{
+  text-align: center;
+  font-size: 3rem
+}
+
 .page-container {
-  max-width: 60rem;
+  max-width: 70rem;
   margin: 10px auto;
 }
 /* End of page container */
@@ -28,7 +33,7 @@ body {
 }
 
 .logo {
-  font-size: 1.5rem;
+  font-size: 20rem;
   font-weight: bold;
   margin-bottom: 1rem;
 }
@@ -45,6 +50,11 @@ body {
 .navigation > nav > ul > li > a {
   color: var(--primary-color);
   text-decoration: none;
+  font-size: 2rem;
+}
+
+.navigation > nav > ul > li > a:hover{
+color: hotpink;
 }
 
 /* End of navigation */
@@ -52,26 +62,56 @@ body {
   padding: 1rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  background-color: var(--primary-bg-color);
+ 
 }
 
+.hero-section-container h1{
+  text-align: left;
+  font-size: 2rem;
+}
+
+.hero-section-container p{
+  font-size: 1.5rem;
+  font-weight: 40;
+}
+
+.hero-section-container button{
+  height: 3rem;
+  width: 12rem;
+  font-size: 1.3rem;
+  font-weight: 200;
+  background-color: hotpink;
+  color: white;
+  border-radius: 15px;
+}
 .hero-section-container > div:first-child {
   align-self: center;
 }
 
-.hero-section-container > div:last-child > div {
+.hero-section-container > div:last-child {
   max-width: 400px;
+ 
 }
+.hero-section-container img{
+  height: 300px;
+  border-radius: 150px;
+  border: 5px solid pink;
+}
+
 
 /* End of hero section */
 
 .quality-wrapper {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
- 
-  align-items: center;
-  
+  display: flex;
+  flex-direction: row;
+  /* grid-template-columns: 1fr 1fr 1fr; */
   column-gap: 2rem;
-  row-gap: 2rem;
+  background-color: var(--primary-bg-color);
+  
+  
+  padding: 1rem;
+  
 }
 
 .quality-card {
@@ -90,24 +130,31 @@ body {
 
 .photo-wrapper{
     /* background-color: aqua; */
-    padding: 24px;
+    padding: 14px;
     display: grid;
-    /* gap: 10px; */
-    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    gap: 10px;
+    grid-template-columns: 1fr 1fr;
+    background-color: white;
 }
 
 .photo-wrapper > div:first-child{
     /* background-color: #6a6a6a; */
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
 }
 
-.photo-wrapper > div:last-child{
+.photo-wrapper > div:last-child img{
     /* background-color: yellow; */
+    height: 29rem;
+    width: 100%;
+    object-fit: cover;
 }
 
 .photo-wrapper > div:first-child img{
-    height: 200px;
+    height: 12rem;
+    width: 100%;
+    object-fit: cover;
     /* background-color: antiquewhite; */
     /* padding: 10px; */
 
@@ -118,7 +165,7 @@ body {
 .proposal-wrapper{
    
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    grid-template-columns: repeat(2,1fr);
     padding: 24px;
     gap: 10px;
     
@@ -126,11 +173,26 @@ body {
 
 
 
-.proposal-wrapper > div > .form-wrapper{
+.proposal-wrapper > div:first-child{
+  /* background-color: whitesmoke; */
+  display: flex;
+  flex-direction: column;
+  width: 20rem;
+  font-size: 30px;
+}
+
+.proposal-wrapper > div:nth-child(2){
     /* background-color: red; */
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    row-gap: 10px;
+    /* display: grid;
+    grid-template-columns: 1fr 1fr; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    max-width: 20rem;
+
     background-color: white;
     padding: 24px;
     width: calc(100% - 48px);
@@ -141,6 +203,55 @@ body {
     -moz-box-shadow: 4px 5px 4px 0px rgba(0, 0, 0, 0.16);
   
 }
+
+.proposal-wrapper .form-wrapper {
+  background-color: #f9f9f9;
+  height: 17rem;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.proposal-wrapper .form-wrapper form {
+  display: flex;
+  flex-direction: column;
+}
+
+.proposal-wrapper .form-wrapper input[type="text"],
+.proposal-wrapper .form-wrapper input[type="email"],
+.proposal-wrapper .form-wrapper input[type="number"] {
+  margin-bottom: 15px;
+  width: 17rem;
+  height: 2rem;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: border-color 0.3s ease;
+}
+
+.proposal-wrapper .form-wrapper input[type="text"]:focus,
+.proposal-wrapper .form-wrapper input[type="email"]:focus,
+.proposal-wrapper .form-wrapper input[type="number"]:focus {
+  border-color: hotpink;
+  outline: none;
+}
+
+.proposal-wrapper .form-wrapper button {
+  padding: 10px 20px;
+  background-color: hotpink;
+  height: 3rem;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.proposal-wrapper .form-wrapper button:hover {
+  background-color: #0056b3;
+}
+
+
 
 /* end of proposal-section */
 
@@ -163,4 +274,30 @@ body {
 
 .footer-wrapper > div:nth-child(2) > footer > ul > li > a{
     text-decoration: none;
+}
+
+
+@media (max-width:700px)
+{
+   .navigation{
+    width: 41rem;
+   }
+   .navigation > nav > ul > li > a {
+     
+  }
+   .hero-section-container{
+    width: 41rem;
+   }
+
+   .quality-wrapper {
+    width: 41rem;
+   }
+
+   .photo-wrapper{
+    width: 41rem;
+   }
+
+   .footer-wrapper{
+    width: 41rem;
+   }
 }
